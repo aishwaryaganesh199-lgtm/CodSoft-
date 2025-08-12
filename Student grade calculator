@@ -1,0 +1,55 @@
+//STUDENT GRADE CALCULATOR
+package demo;
+import java.util.*;
+public class Student_Grade_Calculator {
+	public static void main(String args[])
+	{
+		Scanner sc =new Scanner(System.in);
+		String s_name ="Alice";
+		int roll_no=101;
+		int tot_sub=5;
+		int tot_marks=500;
+		int tam,eng,mat,sci,soc;//marks in each subject
+		System.out.println("Marks obtained in each subject:");
+		System.out.print("Tamil:");
+		tam=sc.nextInt();
+		
+		System.out.print("English");
+		eng=sc.nextInt();
+		
+		System.out.print("Mathematics:");
+		mat=sc.nextInt();
+		
+		System.out.print("Science:");
+		sci=sc.nextInt();
+		
+		System.out.print("Social science:");
+		soc=sc.nextInt();
+		
+		int total=tam+eng+mat+sci+soc;
+		double average=total/tot_sub;
+		double averagePercentage=(total/tot_marks)*100;
+		char grade;
+		if (averagePercentage >= 90) {
+		    grade = 'O';
+		} else if (averagePercentage >= 80) {
+		    grade = 'A';
+		} else if (averagePercentage >= 70) {
+		    grade = 'B';
+		} else {
+		    grade = 'C';
+		}
+System.out.println("**********************************************");
+System.out.println("Student roll_no:"+roll_no);
+System.out.println("Student name:"+s_name);
+System.out.println("Total marks:"+tot_marks);
+System.out.println("Average Percentage:"+averagePercentage);
+System.out.println("Grade:"+grade);
+System.out.println("***********************************************");
+
+
+		sc.close();
+		
+	}
+
+}
