@@ -1,0 +1,40 @@
+//CURRENCY CONVERTER
+import java.util.*;
+
+public class CurrencyConverter {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Step 1: Currency Selection
+        System.out.print("Enter base currency (USD, INR, EUR): ");
+        String base = sc.next().toUpperCase();
+
+        System.out.print("Enter target currency (USD, INR, EUR): ");
+        String target = sc.next().toUpperCase();
+
+        // Step 2: Currency Rates (Sample data)
+        // Rates given in relation to 1 USD
+        Map<String, Double> rates = new HashMap<>();
+        rates.put("USD", 1.0);
+        rates.put("INR", 83.0);
+        rates.put("EUR", 0.92);
+
+        if (!rates.containsKey(base) || !rates.containsKey(target)) {
+            System.out.println("Currency not supported.");
+            return;
+        }
+
+        // Step 3: Amount Input
+        System.out.print("Enter amount in " + base + ": ");
+        double amount = sc.nextDouble();
+
+        // Step 4: Currency Conversion
+        double amountInUSD = amount / rates.get(base); // convert base to USD
+        double converted = amountInUSD * rates.get(target); // USD to target
+
+        // Step 5: Display Result
+        System.out.printf("%.2f %s = %.2f %s%n", amount, base, converted, target);
+
+        sc.close();
+    }
+}
